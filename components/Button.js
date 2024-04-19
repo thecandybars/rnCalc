@@ -1,9 +1,12 @@
 import { StyleSheet, Dimensions, Text, TouchableOpacity } from "react-native";
 
-export default function Button({ onPress, text, theme }) {
+export default function Button({ onPress, text, theme, size }) {
   const buttonStyles = [styles.button];
   const textStyles = [styles.text];
 
+  if (size === "double") {
+    buttonStyles.push(styles.buttonDouble);
+  }
   if (theme === "secondary") {
     buttonStyles.push(styles.buttonSecondary);
     textStyles.push(styles.textSecondary);
@@ -45,5 +48,10 @@ const styles = StyleSheet.create({
   },
   buttonAccent: {
     backgroundColor: "#ff7b00",
+  },
+  buttonDouble: {
+    width: screen.width / 2 - 10,
+    flex: 0,
+    alignItems: "center",
   },
 });
