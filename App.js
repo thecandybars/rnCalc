@@ -2,13 +2,17 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import Keyboard from "./components/Keyboard";
 import Display from "./components/Display";
+import calculator from "./functions/calculations";
+import Calculator from "./components/Calculator";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Display />
-        <Keyboard />
+        <Calculator>
+          <Display />
+          <Keyboard />
+        </Calculator>
         <StatusBar style="auto" />
       </SafeAreaView>
     </View>

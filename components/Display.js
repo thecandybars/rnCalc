@@ -1,12 +1,12 @@
 import { StyleSheet, Text } from "react-native";
 import React from "react";
 
-export default function Display() {
-  return (
-    <Text style={styles.value}>
-      {parseFloat(-1234567890.12).toLocaleString()}
-    </Text>
-  );
+export default function Display(props) {
+  const stringValue = props.calcState.currentValue;
+  const printDecimal = stringValue[stringValue.length - 1] === "." ? "." : "";
+  const displayedValue = parseFloat(stringValue).toLocaleString();
+  const displayedString = displayedValue + printDecimal;
+  return <Text style={styles.value}>{displayedString}</Text>;
 }
 
 // STYLES
