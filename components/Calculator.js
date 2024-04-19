@@ -4,6 +4,7 @@ import { initialState } from "../functions/calculations";
 
 export default function Calculator(props) {
   const [calcState, setCalcState] = useState(initialState);
+  console.log("🚀 ~ Calculator ~ calcState:", calcState);
 
   return (
     <View>
