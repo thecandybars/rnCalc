@@ -16,52 +16,52 @@ export default function Keyboard(props) {
           text="C"
           theme="secondary"
           onPress={() => handleKeyPress("clear")}
-        ></Button>
+        />
         <Button
           text="±"
           theme="secondary"
           onPress={() => handleKeyPress("posneg")}
-        ></Button>
+        />
         <Button
           text="%"
           theme="secondary"
           onPress={() => handleKeyPress("percent")}
-        ></Button>
+        />
         <Button
           text="/"
           theme="accent"
           onPress={() => handleKeyPress("operator", "/")}
-        ></Button>
+        />
       </Row>
       <Row>
-        <Button text="7" onPress={() => handleKeyPress("number", 7)}></Button>
-        <Button text="8" onPress={() => handleKeyPress("number", 8)}></Button>
-        <Button text="9" onPress={() => handleKeyPress("number", 9)}></Button>
+        <Button text="7" onPress={() => handleKeyPress("number", 7)} />
+        <Button text="8" onPress={() => handleKeyPress("number", 8)} />
+        <Button text="9" onPress={() => handleKeyPress("number", 9)} />
         <Button
           text="X"
           theme="accent"
           onPress={() => handleKeyPress("operator", "*")}
-        ></Button>
+        />
       </Row>
       <Row>
-        <Button text="4" onPress={() => handleKeyPress("number", 4)}></Button>
-        <Button text="5" onPress={() => handleKeyPress("number", 5)}></Button>
-        <Button text="6" onPress={() => handleKeyPress("number", 6)}></Button>
+        <Button text="4" onPress={() => handleKeyPress("number", 4)} />
+        <Button text="5" onPress={() => handleKeyPress("number", 5)} />
+        <Button text="6" onPress={() => handleKeyPress("number", 6)} />
         <Button
           text="-"
           theme="accent"
           onPress={() => handleKeyPress("operator", "-")}
-        ></Button>
+        />
       </Row>
       <Row>
-        <Button text="1" onPress={() => handleKeyPress("number", 1)}></Button>
-        <Button text="2" onPress={() => handleKeyPress("number", 2)}></Button>
-        <Button text="3" onPress={() => handleKeyPress("number", 3)}></Button>
+        <Button text="1" onPress={() => handleKeyPress("number", 1)} />
+        <Button text="2" onPress={() => handleKeyPress("number", 2)} />
+        <Button text="3" onPress={() => handleKeyPress("number", 3)} />
         <Button
           text="+"
           theme="accent"
           onPress={() => handleKeyPress("operator", "+")}
-        ></Button>
+        />
       </Row>
       <Row>
         <Button text="0" onPress={() => handleKeyPress("number", 0)} />

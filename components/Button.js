@@ -4,7 +4,8 @@ Button.defaultProps = {
   colorScheme: "dark",
 };
 export default function Button(props) {
-  const { onPress, text, theme, size, colorScheme } = props;
+  const { onPress, text, theme, size } = props;
+
   const buttonStyles = [styles.button];
   const textStyles = [styles.text];
 
@@ -31,7 +32,7 @@ const buttonWidth = screen.width / 4;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colorScheme === "dark" ? "#333333" : "#ff0000",
+    backgroundColor: "#333333",
     flex: 1,
     height: Math.floor(buttonWidth - 10),
     alignItems: "center",

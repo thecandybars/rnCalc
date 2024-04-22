@@ -1,20 +1,22 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet, Switch, View } from "react-native";
-import Keyboard from "./components/Keyboard";
-import Display from "./components/Display";
 import Calculator from "./components/Calculator";
-import ColorSchemeSwitch from "./components/ColorSchemeSwitch";
+
+import MainView from "./components/MainView/MainView";
+import ColorSchemeProvider from "./components/ColorScheme/ColorSchemeProvider";
+import ColorSchemeSwitch from "./components/ColorScheme/ColorSchemeSwitch";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <Calculator>
-          <ColorSchemeSwitch />
-          <Display />
-          <Keyboard />
-        </Calculator>
-        <StatusBar style="auto" />
+        <ColorSchemeProvider>
+          <MainView>
+            <ColorSchemeSwitch />
+            <Calculator />
+            <StatusBar style="auto" />
+          </MainView>
+        </ColorSchemeProvider>
       </SafeAreaView>
     </View>
   );
@@ -24,7 +26,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#202020",
     justifyContent: "flex-end",
   },
 });
