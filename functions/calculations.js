@@ -11,12 +11,8 @@ export default function calculations(type, value, state) {
       ...state,
       currentValue: `${parseFloat(state.currentValue) * 0.01}`,
     };
-  if (type === "operator")
-    return {
-      operator: value,
-      previousValue: state.currentValue,
-      currentValue: "0",
-    };
+  if (type === "operator") return handleOperator(state, value);
+
   return state;
 }
 
@@ -26,37 +22,46 @@ export const initialState = {
   previousValue: null,
 };
 
-const handleEqual = (state) => {
+const handleOperator = (state, value) => {
+  if (state.operator === null)
+    return {
+      operator: value,
+      previousValue: state.currentValue,
+      currentValue: "0",
+    };
+  else {
+    const lastCalculation = calculate(state);
+    return {
+      operator: value,
+      previousValue: lastCalculation,
+      currentValue: "0",
+    };
+  }
+};
+
+const calculate = (state) => {
   const { currentValue, previousValue, operator } = state;
   const current = parseFloat(currentValue);
   const previous = parseFloat(previousValue);
-  const resetState = { operator: null, previousValue: null };
-
   switch (operator) {
     case "+":
-      return {
-        currentValue: `${previous + current}`,
-        ...resetState,
-      };
+      return `${previous + current}`;
     case "-":
-      return {
-        currentValue: `${previous - current}`,
-        ...resetState,
-      };
+      return `${previous - current}`;
     case "*":
-      return {
-        currentValue: `${previous * current}`,
-        ...resetState,
-      };
+      return `${previous * current}`;
     case "/":
-      return {
-        currentValue: `${previous / current}`,
-        ...resetState,
-      };
-
+      return `${previous / current}`;
     default:
-      return state;
+      return current;
   }
+};
+const handleEqual = (state) => {
+  return {
+    currentValue: calculate(state),
+    operator: null,
+    previousValue: null,
+  };
 };
 
 const handleNumber = (value, state) => {

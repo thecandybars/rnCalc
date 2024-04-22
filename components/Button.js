@@ -1,6 +1,10 @@
 import { StyleSheet, Dimensions, Text, TouchableOpacity } from "react-native";
 
-export default function Button({ onPress, text, theme, size }) {
+Button.defaultProps = {
+  colorScheme: "dark",
+};
+export default function Button(props) {
+  const { onPress, text, theme, size, colorScheme } = props;
   const buttonStyles = [styles.button];
   const textStyles = [styles.text];
 
@@ -27,7 +31,7 @@ const buttonWidth = screen.width / 4;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#333333",
+    backgroundColor: colorScheme === "dark" ? "#333333" : "#ff0000",
     flex: 1,
     height: Math.floor(buttonWidth - 10),
     alignItems: "center",

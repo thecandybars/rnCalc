@@ -1,15 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, Switch, View } from "react-native";
 import Keyboard from "./components/Keyboard";
 import Display from "./components/Display";
-import calculator from "./functions/calculations";
 import Calculator from "./components/Calculator";
+import ColorSchemeSwitch from "./components/ColorSchemeSwitch";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <SafeAreaView>
         <Calculator>
+          <ColorSchemeSwitch />
           <Display />
           <Keyboard />
         </Calculator>
