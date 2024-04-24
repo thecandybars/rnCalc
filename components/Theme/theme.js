@@ -6,6 +6,7 @@ export const colors = {
   black: "#060606",
   lightBlue: "#819bc7",
   orange: "#ff7b00",
+  darkOrange: "#ff5500",
 };
 
 export const palette = {
@@ -26,6 +27,7 @@ export const palette = {
       primary: colors.darkGray,
       secondary: colors.lightBlue,
       accent: colors.orange,
+      highlighted: colors.orange,
     },
   },
 };

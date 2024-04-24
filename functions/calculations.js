@@ -40,6 +40,7 @@ const handleOperator = (state, value) => {
       currentValue: "0",
       display: state.currentValue,
     };
+  else if (state.currentValue === "0") return { ...state, operator: value };
   else {
     const lastCalculation = calculate(state);
     return {

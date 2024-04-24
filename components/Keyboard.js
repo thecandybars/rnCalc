@@ -31,6 +31,7 @@ export default function Keyboard(props) {
           text="/"
           theme="accent"
           onPress={() => handleKeyPress("operator", "/")}
+          highlighted={props.calcState.operator === "/"}
         />
       </Row>
       <Row>
@@ -41,6 +42,7 @@ export default function Keyboard(props) {
           text="X"
           theme="accent"
           onPress={() => handleKeyPress("operator", "*")}
+          highlighted={props.calcState.operator === "*"}
         />
       </Row>
       <Row>
@@ -51,6 +53,7 @@ export default function Keyboard(props) {
           text="-"
           theme="accent"
           onPress={() => handleKeyPress("operator", "-")}
+          highlighted={props.calcState.operator === "-"}
         />
       </Row>
       <Row>
@@ -61,6 +64,7 @@ export default function Keyboard(props) {
           text="+"
           theme="accent"
           onPress={() => handleKeyPress("operator", "+")}
+          highlighted={props.calcState.operator === "+"}
         />
       </Row>
       <Row>

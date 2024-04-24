@@ -3,11 +3,13 @@ import { palette } from "./Theme/theme";
 
 Button.defaultProps = {
   colorScheme: "dark",
+  highlighted: false,
 };
 export default function Button(props) {
-  const { onPress, text, theme, size } = props;
+  const { onPress, text, theme, size, customStyles, highlighted } = props;
 
   const buttonStyles = [styles.button];
+  if (customStyles) buttonStyles.push(customStyles);
   const textStyles = [styles.text];
 
   if (size === "double") {
@@ -20,6 +22,10 @@ export default function Button(props) {
   if (theme === "accent") {
     buttonStyles.push(styles.buttonAccent);
   }
+  if (highlighted)
+    buttonStyles.push({
+      backgroundColor: "#ff5500",
+    });
   return (
     <TouchableOpacity onPress={onPress} style={buttonStyles}>
       <Text style={textStyles}>{text}</Text>
@@ -59,4 +65,5 @@ const styles = StyleSheet.create({
     flex: 0,
     alignItems: "center",
   },
+  highlight: { color: palette.background.buttons.highlighted },
 });
