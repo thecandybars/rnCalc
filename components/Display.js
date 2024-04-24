@@ -1,6 +1,7 @@
 import { StyleSheet, Text } from "react-native";
 import React from "react";
 import { useUserColorScheme } from "./ColorScheme/ColorSchemeProvider";
+import { palette } from "./Theme/theme";
 
 export default function Display(props) {
   // COLOR
@@ -23,6 +24,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginBottom: 10,
   },
-  light: { color: "#333" },
-  dark: { color: "#ddd" },
+  light: { color: palette.text.light },
+  dark: { color: palette.text.dark },
 });

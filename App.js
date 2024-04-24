@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Switch, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import Calculator from "./components/Calculator";
 
 import MainView from "./components/MainView/MainView";
@@ -14,7 +14,7 @@ export default function App() {
           <MainView>
             <ColorSchemeSwitch />
             <Calculator />
-            <StatusBar style="auto" />
+            {/* <StatusBar style="default" /> */}
           </MainView>
         </ColorSchemeProvider>
       </SafeAreaView>

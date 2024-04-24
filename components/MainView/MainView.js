@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { useUserColorScheme } from "../ColorScheme/ColorSchemeProvider";
+import { palette } from "../Theme/theme";
 
 export default function MainView(props) {
   const { colorScheme } = useUserColorScheme();
-  console.log("🚀 ~ MainView ~ colorScheme:", colorScheme);
   const containerStyle = [styles.container];
   if (colorScheme === "light") containerStyle.push(styles.lightScheme);
   else containerStyle.push(styles.darkScheme);
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     // justifyContent: "flex-end",
   },
   darkScheme: {
-    backgroundColor: "#202020",
+    backgroundColor: palette.background.dark,
   },
-  lightScheme: { backgroundColor: "#ddd" },
+  lightScheme: { backgroundColor: palette.background.light },
 });

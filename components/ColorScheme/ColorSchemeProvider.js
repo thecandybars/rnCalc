@@ -1,4 +1,4 @@
-import { View, Text, useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 import React, { createContext, useContext, useState } from "react";
 
 const ColorSchemeContext = createContext();

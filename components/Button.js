@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions, Text, TouchableOpacity } from "react-native";
+import { palette } from "./Theme/theme";
 
 Button.defaultProps = {
   colorScheme: "dark",
@@ -32,7 +33,7 @@ const buttonWidth = screen.width / 4;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#333333",
+    backgroundColor: palette.background.buttons.primary,
     flex: 1,
     height: Math.floor(buttonWidth - 10),
     alignItems: "center",
@@ -41,17 +42,17 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   text: {
-    color: "#fff",
+    color: palette.text.buttons.primary,
     fontSize: 24,
   },
   textSecondary: {
-    color: "#060606",
+    color: palette.text.buttons.secondary,
   },
   buttonSecondary: {
-    backgroundColor: "#819bc7",
+    backgroundColor: palette.background.buttons.secondary,
   },
   buttonAccent: {
-    backgroundColor: "#ff7b00",
+    backgroundColor: palette.background.buttons.accent,
   },
   buttonDouble: {
     width: screen.width / 2 - 10,
