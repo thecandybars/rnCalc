@@ -7,6 +7,7 @@ import Keyboard from "./Keyboard";
 export default function Calculator(props) {
   // CALCULATOR STATE
   const [calcState, setCalcState] = useState(initialState);
+  console.log("🚀 ~ Calculator ~ calcState:", calcState);
 
   return (
     <View>

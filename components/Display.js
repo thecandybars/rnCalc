@@ -9,7 +9,7 @@ export default function Display(props) {
   const { colorScheme } = useUserColorScheme();
   displayStyle.push(colorScheme === "light" ? styles.light : styles.dark);
   //
-  const stringValue = props.calcState.currentValue;
+  const stringValue = props.calcState.display;
   const printDecimal = stringValue[stringValue.length - 1] === "." ? "." : "";
   const displayedValue = parseFloat(stringValue).toLocaleString();
   const displayedString = displayedValue + printDecimal;
